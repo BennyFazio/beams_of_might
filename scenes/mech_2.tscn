@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=1]
+
+[ext_resource path="res://scripts/mech_2.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ammo_mech1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/images/mech2/idle1.png" type="Texture" id=3]
+[ext_resource path="res://data/images/mech2/idle2.png" type="Texture" id=4]
+[ext_resource path="res://data/images/mech2/idle3.png" type="Texture" id=5]
+[ext_resource path="res://data/images/mech2/idle4.png" type="Texture" id=6]
+[ext_resource path="res://data/images/mech2/upward1.png" type="Texture" id=7]
+[ext_resource path="res://data/images/mech2/upward2.png" type="Texture" id=8]
+[ext_resource path="res://data/images/mech2/upward3.png" type="Texture" id=9]
+[ext_resource path="res://data/images/mech2/upward4.png" type="Texture" id=10]
+[ext_resource path="res://data/images/mech2/vertical1.png" type="Texture" id=11]
+[ext_resource path="res://data/images/mech2/vertical2.png" type="Texture" id=12]
+[ext_resource path="res://data/images/mech2/vertical3.png" type="Texture" id=13]
+[ext_resource path="res://data/images/mech2/vertical4.png" type="Texture" id=14]
+[ext_resource path="res://data/images/mech2/forward1.png" type="Texture" id=15]
+[ext_resource path="res://data/images/mech2/forward2.png" type="Texture" id=16]
+[ext_resource path="res://data/images/mech2/forward3.png" type="Texture" id=17]
+[ext_resource path="res://data/images/mech2/forward4.png" type="Texture" id=18]
+[ext_resource path="res://data/images/mech2/jumping2.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.4499, 34.7882 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "upward",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "vertical",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "forward",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "jumping",
+"speed": 30.0
+} ]
+
+[node name="mech_2" type="KinematicBody2D" groups=[
+"mechs",
+]]
+
+transform/pos = Vector2( 448, 277 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -12.9984, -7.44373 )
+shapes/0/trigger = false
+collision/layers = 9
+collision/mask = 9
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+bullet = ExtResource( 2 )
+
+[node name="sprite" type="AnimatedSprite" parent="." groups=[
+"aiming_frames",
+]]
+
+transform/pos = Vector2( -14, -7 )
+frames = SubResource( 2 )
+animation = "forward"
+flip_h = true
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -12.9984, -7.44373 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="ground_ray" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -12, 32 )
+enabled = true
+cast_to = Vector2( 0, 30 )
+layer_mask = 9
+type_mask = 15
+
+[node name="camera" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 0.323517, -180 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.0
+drag_margin/top = 0.0
+drag_margin/right = 0.0
+drag_margin/bottom = 1.0
+
+[node name="Rbullet_pos1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -22.4214, -45.3414 )
+
+[node name="Rbullet_pos2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 4.076, -45.7356 )
+
+[node name="Rbullet_pos3" type="Position2D" parent="."]
+
+transform/pos = Vector2( 23.0086, -18.5017 )
+
+[node name="Rbullet_pos4" type="Position2D" parent="."]
+
+transform/pos = Vector2( -11.8625, 6.5852 )
+
+[node name="Rbullet_pos5" type="Position2D" parent="."]
+
+transform/pos = Vector2( 14.3571, 70.6573 )
+
+[node name="Lbullet_pos1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -4.49069, -46.2259 )
+
+[node name="Lbullet_pos2" type="Position2D" parent="."]
+
+transform/pos = Vector2( -29.7257, -44.9326 )
+
+[node name="Lbullet_pos3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -50.7893, -18.8077 )
+
+[node name="Lbullet_pos4" type="Position2D" parent="."]
+
+transform/pos = Vector2( -42.9607, 31.0775 )
+
+[node name="Lbullet_pos5" type="Position2D" parent="."]
+
+transform/pos = Vector2( -26.9431, 70.0522 )
+
+[node name="shoot_timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="bullet_container" type="Node" parent="."]
+
+[node name="drop_timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = true
+autostart = false
+
+

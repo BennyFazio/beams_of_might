@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://scripts/level1.gd" type="Script" id=1]
+[ext_resource path="res://scenes/platform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/platform_drop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/platform_scrolling.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/zeus_five.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/player_deployment.tscn" type="PackedScene" id=6]
+
+[node name="level1" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="platform1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 760.332, 344.295 )
+
+[node name="platform1 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 246.309, 414.16 )
+
+[node name="platform1 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 2945.24, 347.089 )
+
+[node name="platform14" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1525.59, 19.2018 )
+
+[node name="platform16" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1218.59, 212.867 )
+
+[node name="platform_drop" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1097.3, 465.807 )
+
+[node name="platform17" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3497.78, 740.562 )
+transform/scale = Vector2( 105.555, 3.90507 )
+
+[node name="platform18" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 2519.24, 146.05 )
+
+[node name="platform19" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3468.55, 174.112 )
+
+[node name="platform_drop 4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1901.59, 143.261 )
+
+[node name="platform_drop5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1906.11, 361.825 )
+
+[node name="platform_drop 3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1650.42, 290.56 )
+
+[node name="platform_drop 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1646.72, 431.207 )
+
+[node name="platform_scrolling" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2172.37, 20.8899 )
+
+[node name="zeus_five" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1494.71, 525.849 )
+
+[node name="player_deployment" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1744.03, 249.941 )
+
+

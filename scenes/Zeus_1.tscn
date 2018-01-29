@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://scripts/Zeus_1.gd" type="Script" id=1]
+[ext_resource path="res://data/images/jeff/jeff2.png" type="Texture" id=2]
+[ext_resource path="res://data/images/jeff/jeff5.png" type="Texture" id=3]
+[ext_resource path="res://data/images/jeff/jeff1.png" type="Texture" id=4]
+[ext_resource path="res://data/images/jeff/jeff3.png" type="Texture" id=5]
+[ext_resource path="res://data/images/jeff/jeff4.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.5846, 47.4456 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "attacking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[node name="zeus1" type="KinematicBody2D" groups=[
+"mobs",
+]]
+
+transform/pos = Vector2( 498.283, 184.549 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "attacking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

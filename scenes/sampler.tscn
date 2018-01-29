@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://data/sfx/aliendeath.wav" type="Sample" id=1]
+[ext_resource path="res://data/sfx/alienhurt.wav" type="Sample" id=2]
+[ext_resource path="res://data/sfx/beamdown.wav" type="Sample" id=3]
+[ext_resource path="res://data/sfx/beamup.wav" type="Sample" id=4]
+[ext_resource path="res://data/sfx/explode.wav" type="Sample" id=5]
+[ext_resource path="res://data/sfx/laser.wav" type="Sample" id=6]
+[ext_resource path="res://data/sfx/mechdamage.wav" type="Sample" id=7]
+[ext_resource path="res://data/sfx/mechjumping.wav" type="Sample" id=8]
+[ext_resource path="res://data/sfx/mechland.wav" type="Sample" id=9]
+[ext_resource path="res://data/sfx/missile.wav" type="Sample" id=10]
+[ext_resource path="res://data/sfx/orc.wav" type="Sample" id=11]
+[ext_resource path="res://data/sfx/robotdamage.wav" type="Sample" id=12]
+[ext_resource path="res://data/sfx/robotdeath.wav" type="Sample" id=13]
+[ext_resource path="res://data/sfx/transmit.wav" type="Sample" id=14]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/aliendeath = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/alienhurt = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/beamdown = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/beamup = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/explode = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/laser = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/mechdamage = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/mechjumping = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/mechland = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/missile = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+samples/orc = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 11 )
+}
+samples/robotdamage = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 12 )
+}
+samples/robotdeath = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 13 )
+}
+samples/transmit = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 14 )
+}
+
+[node name="sampler" type="SamplePlayer2D"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+

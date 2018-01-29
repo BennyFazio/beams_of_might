@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://scripts/player_deployment.gd" type="Script" id=1]
+[ext_resource path="res://scenes/mech_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/mech_2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/beam.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scenes/sampler.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.6791, 32.5799 )
+
+[node name="player_deployment" type="Node2D"]
+
+transform/pos = Vector2( 422.066, 359.534 )
+script/script = ExtResource( 1 )
+
+[node name="mech_1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 255.524, 131.946 )
+
+[node name="mech_2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -37.4328, -1937.32 )
+
+[node name="beam" type="KinematicBody2D" parent="."]
+
+visibility/visible = false
+visibility/opacity = 0.49
+transform/pos = Vector2( -48.1474, -1774.87 )
+transform/scale = Vector2( 1.78185, 2.46748 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 32
+collision/mask = 32
+collision/margin = 0.08
+script/script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="beam"]
+
+transform/pos = Vector2( 0, 937.252 )
+transform/scale = Vector2( 1, 30.2891 )
+texture = ExtResource( 5 )
+modulate = Color( 0.835938, 0, 0.705322, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beam"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="beam_top" type="Position2D" parent="beam"]
+
+transform/pos = Vector2( -2.48416, -35.1783 )
+transform/scale = Vector2( 1, 0.287274 )
+
+[node name="timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[node name="sampler" parent="." instance=ExtResource( 6 )]
+
+
